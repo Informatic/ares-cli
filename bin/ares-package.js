@@ -301,9 +301,6 @@ PalmPackage.prototype = {
                 cliControl.end(-1);
             }
         } else { // app+service packaging
-            if (Object.hasOwnProperty.call(this.options, 'pkgid') || Object.hasOwnProperty.call(this.options, 'pkgversion') || Object.hasOwnProperty.call(this.options, 'pkginfofile')) {
-                this.exitOnError(errHndl.changeErrMsg("NOT_USE_WITH_OPTIONS", "pkgid, pkgversion, pkginfofile"));
-            }
             packager.generatePackage(this.argv.argv.remain, this.destination, this.options, next);
         }
     },
